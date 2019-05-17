@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import "antd/dist/antd.css";
+import { Row, Col } from "antd";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Row>
+      <Col md={4} lg={4} xl={5}>
+        Col
+      </Col>
+      <Col md={16} lg={16} xl={14}>
+        Col
+      </Col>
+      <Col md={4} lg={4} xl={5}>
+        Col
+      </Col>
+    </Row>
   );
 }
 
