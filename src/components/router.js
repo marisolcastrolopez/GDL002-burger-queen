@@ -8,7 +8,7 @@ function BasicExample() {
   return (
     <Router>
       <div>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/">Role</Link>
           </li>
@@ -18,7 +18,7 @@ function BasicExample() {
           <li>
             <Link to="/waiter-home">WaiterUI</Link>
           </li>
-        </ul>
+        </ul> */}
 
         
 

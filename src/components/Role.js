@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "antd/dist/antd.css";
+import './styles.css'
 import { Row, Col } from "antd";
 import { Button } from 'antd';
 
@@ -11,8 +13,9 @@ return ( <Row>
             </Col>
             <Col md={16} lg={16} xl={14}>
                 <p>Whats up hey hey dude chooseRole</p>
-                <Button type="primary" >
-                    Primary
+                
+                <Button className="btnRole" type="primary" >
+                <Link to="/waiterlist">WaiterList</Link>
                 </Button>
                 <Button type="primary" >
                     Primary

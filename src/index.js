@@ -1,6 +1,6 @@
 import React from 'react';  
 import ReactDOM from 'react-dom';
-import './css/index.css'; //Stylesheet for index.js
+// import './styles.css'; //Stylesheet for index.js
 // import {Role} from './components/Role'; //1° Screen Role - component
 import * as serviceWorker from './serviceWorker';
 // import {WaiterList} from './components/WaiterList';
