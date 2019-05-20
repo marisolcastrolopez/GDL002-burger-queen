@@ -1,20 +1,16 @@
-import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import React, { Component } from 'react';
 import "antd/dist/antd.css";
 import { Row, Col } from "antd";
 import { Button } from 'antd';
 
 
-function Role() {
-
-    return (
-        <Row>
+const Role = () => {
+return ( <Row>
             <Col md={4} lg={4} xl={5}>
                 Col
             </Col>
             <Col md={16} lg={16} xl={14}>
-                <p>Whats up hey hey dude</p>
+                <p>Whats up hey hey dude chooseRole</p>
                 <Button type="primary" >
                     Primary
                 </Button>
@@ -25,8 +21,8 @@ function Role() {
             <Col md={4} lg={4} xl={5}>
                 Col
             </Col>
-        </Row>
-    );
+</Row> )
+
 }
 
 export default Role;
