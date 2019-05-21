@@ -1,14 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Role from './Role'; //1° Screen Role - component
-import WaiterList from './WaiterList';
-import WaiterUI from './WaiterUI';
+import WaiterList from './WaiterList'; //2° Screen Waiter List - component
+import WaiterUI from './WaiterUI'; //3° Screen Waiter UI - component
 
-function BasicExample() {
+const AppRouter = () => {
   return (
+    
     <Router>
-      <div>
-        {/* <ul>
+        <Route exact path="/" component={Role} />
+        <Route path="/waiterlist" component={WaiterList} />
+        <Route path="/waiter-home" component={WaiterUI} />
+    </Router>
+  );
+}
+
+export default AppRouter;
+
+
+/* <ul>
           <li>
             <Link to="/">Role</Link>
           </li>
@@ -18,16 +28,4 @@ function BasicExample() {
           <li>
             <Link to="/waiter-home">WaiterUI</Link>
           </li>
-        </ul> */}
-
-        
-
-        <Route exact path="/" component={Role} />
-        <Route path="/waiterlist" component={WaiterList} />
-        <Route path="/waiter-home" component={WaiterUI} />
-      </div>
-    </Router>
-  );
-}
-
-export default BasicExample;
+        </ul> */

@@ -1,15 +1,11 @@
 import React from 'react';  
 import ReactDOM from 'react-dom';
-// import './styles.css'; //Stylesheet for index.js
-// import {Role} from './components/Role'; //1° Screen Role - component
 import * as serviceWorker from './serviceWorker';
-// import {WaiterList} from './components/WaiterList';
-// import {WaiterUI} from './components/WaiterUI';
-import BasicExample from './components/router'
+import AppRouter from './components/router'
 
 
 ReactDOM.render(
-  <BasicExample />
+  <AppRouter />
   ,
   document.getElementById('root'));
 
