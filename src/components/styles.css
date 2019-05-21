@@ -72,3 +72,11 @@ code {
 .pad-role {
     margin-top: 10%;
 }
+
+.viewheight {
+  height: -webkit-fill-available;
+}
+
+.svg-margin {
+  margin-left: 1.4em;
+}
