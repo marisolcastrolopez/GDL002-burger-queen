@@ -16,7 +16,6 @@ const Role = () => {
 			</section>
 			<Row>
 				<Col className="center-col pad-role" md={24} lg={24} xl={24}>
-					
 					<br />
 					<span className="titles whiteTxt">Select your role</span>
 				</Col>
