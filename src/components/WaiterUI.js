@@ -20,7 +20,7 @@ const WaiterUI = () => {
                   <Col md={16} lg={16} xl={16} className="menu-pad">
                      <MenuContainer />
                   </Col>
-                  <OrderSection/>
+                  <OrderSection />
                </Row>
             </Content>
          </Layout>

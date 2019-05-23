@@ -1,52 +1,114 @@
 import React from 'react';
 import "antd/dist/antd.css";
 // import { Link } from "react-router-dom";
-import { Icon, Card, Tabs } from 'antd';
+import { Icon, Card, Tabs, Col, Row } from 'antd';
 
 const { Meta } = Card;
 const TabPane = Tabs.TabPane;
 
 const MenuContainer = () => {
-    return (
-        <Tabs defaultActiveKey="2">
-            <TabPane
-                tab={
-                    <span>
-                        <Icon type="apple" />
-                        Dinner
+   return (
+      <Tabs defaultActiveKey="1">
+         <TabPane
+            tab={
+               <span>
+                  <i className="far fa-moon fa-lg"></i>
+                  Dinner
               </span>
-                }
-                key="1"
+            }
+            key="1"
 
-            >
-                <Card
-                    hoverable
-                    style={{ width: 240 }}
-                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                >
-                    <Meta title="Europe Street beat" description="www.instagram.com" />
-                </Card>
+         >
+            <Row gutter={16}>
+               <Col span={8}>
+                  <Card title="Hamburger" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+               <Col span={8}>
+                  <Card title="Fries" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+               <Col span={8}>
+                  <Card title="Onion Rings" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+            </Row>
 
-            </TabPane>
-            <TabPane
-                tab={
-                    <span>
-                        <Icon type="android" />
-                        Breakfast
+         </TabPane>
+         <TabPane
+            tab={
+               <span>
+                  <i className="far fa-sun fa-lg"></i>
+                  Breakfast
               </span>
-                }
-                key="2"
-            >
-                <Card
-                    hoverable
-                    style={{ width: 240 }}
-                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                >
-                    <Meta title="Europe Street beat" description="www.instagram.com" />
-                </Card>
-            </TabPane>
-        </Tabs>
-    )
+            }
+            key="2"
+         >
+            <Row gutter={16}>
+               <Col span={8}>
+                  <Card title="Ham&Cheese Sandwich" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+               <Col span={8}>
+
+               </Col>
+               <Col span={8}>
+
+               </Col>
+            </Row>
+         </TabPane>
+         <TabPane
+            tab={
+               <span>
+                  <i className="fas fa-cocktail fa-lg"></i>
+                  Beverages
+              </span>
+            }
+            key="3"
+
+         >
+           <Row gutter={16}>
+               <Col span={8}>
+                  <Card title="Black Coffee" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+               <Col span={8}>
+                  <Card title="Latte" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+               <Col span={8}>
+                  <Card title="Orange Juice" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+            </Row>
+            <Row gutter={16}>
+               <Col span={8}>
+                  <Card title="Water" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+               <Col span={8}>
+                  <Card title="Soda" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+               <Col span={8}>
+                  <Card title="Orange Juice" bordered={false}>
+                     Card content
+        </Card>
+               </Col>
+            </Row>
+
+         </TabPane>
+      </Tabs>
+   )
 
 }
 

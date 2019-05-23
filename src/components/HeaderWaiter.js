@@ -35,7 +35,7 @@ const RenderMenu = () => {
 
 const HeaderWaiter = () => {
    return (
-      <Header style={{ background: '#fff', padding: 0, position: 'fixed', zIndex: 1, width: '100%' }}>
+      <Header className="header-shadow" style={{ background: '#fff', padding: 0, position: 'fixed', zIndex: 1, width: '100%' }}>
          <Row>
             <Col className="center-col" xs={0} sm={0} md={1} lg={1} xl={1}>
             </Col>
