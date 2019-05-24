@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
-import './styles.css'
+import './css/styles.css'
 import { Row, Col } from "antd";
-import bgRole from './bg-role.jpg';
+import bgRole from './img/bg-role.jpg';
 // import logoImg from './logo-img.png' <img src={logoImg} alt="bg-role-burger" />
 // import { Button } from 'antd';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import "antd/dist/antd.css";
-import './styles.css'
+import './css/styles.css'
 import { Link } from "react-router-dom";
 import { Menu, Dropdown, Icon } from 'antd';
 

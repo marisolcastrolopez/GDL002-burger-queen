@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-/* Background image */
+/* Background image / Images */
 #bg {
   position: fixed; 
   top: -50%; 
@@ -30,6 +30,11 @@ code {
   margin: auto; 
   min-width: 50%;
   min-height: 50%;
+}
+
+.menu-img {
+  width: 100%;
+  height: 100%;
 }
 
 /* Text Styles */

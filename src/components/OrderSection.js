@@ -27,7 +27,7 @@ const OrderSection = () => {
                         <Option value="table04">Table 04</Option>
                         <Option value="deliver"><strong>Deliver</strong></Option>
                     </Select>
-                    <Input  placeholder="Client's Name" />
+                    <Input  placeholder="Client's Name" style={{ width: '60%' }} />
                 </InputGroup>
                 <Row>
                 <Col md={24} lg={24} xl={24}><Button style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
