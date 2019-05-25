@@ -1,0 +1,22 @@
+{
+    "dinnerMenu": [
+        {
+            "item": "Hamburger",
+            "price": 10,
+            "img": "%PUBLIC_URL%/components/img/img-bq-burger.jpg",
+            "id": "hamburger"
+        },
+        {
+            "item": "Fries",
+            "price": 5,
+            "img": "%PUBLIC_URL%/components/img/img-bq-fries.jpg",
+            "id": "fries"
+        },
+        {
+            "item": "Onion Rings",
+            "price": 5,
+            "img": "%PUBLIC_URL%/components/img/img-bq-onion.jpg",
+            "id": "onion"
+        }
+    ]
+}

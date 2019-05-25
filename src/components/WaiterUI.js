@@ -6,6 +6,7 @@ import SiderWaiter from './SiderWaiter'
 import HeaderWaiter from './HeaderWaiter';
 import MenuContainer from './MenuContainer'
 import OrderSection from './OrderSection'
+import Test from './CardData'
 
 const { Content } = Layout;
 
@@ -21,6 +22,7 @@ const WaiterUI = () => {
                      <MenuContainer />
                   </Col>
                   <OrderSection />
+                  <Test/>
                </Row>
             </Content>
          </Layout>
