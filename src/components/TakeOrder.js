@@ -14,41 +14,23 @@ import latteImg from './img/img-bq-latte.jpg'
 import orangeImg from './img/img-bq-orange.jpg'
 import waterImg from './img/img-bq-water.jpg'
 import cokeImg from './img/img-bq-coke.jpg'
+import menu from './dinnerMenu.json'
 
 const TabPane = Tabs.TabPane;
 const InputGroup = Input.Group;
 const Option = Select.Option;
 
+
 class TakeOrder extends React.Component {
    constructor(props) {
      super(props);
-     Firebase.initializeApp(config);
- 
+
+     if (!Firebase.apps.length) {
+      Firebase.initializeApp(config);
+  }
+
      this.state = {
-       orders: [],
-       menu:  [
-         {
-            "dish": "Hamburger",
-            "img": 'img-bq-burger',
-            "description": "Grilled beef,topped with cheese and vegetables.",
-            "price": 10,
-            "id": 1
-        },
-        {
-            "dish": "Fries",
-            "img": 'img-bq-burger',
-            "description": "Classical french fries made at moment.",
-            "price": 5,
-            "id": 2
-        },
-        {
-            "dish": "Onion Rings",
-            "img": 'img-bq-burger',
-            "description": "Classic onion rings fried at moment.",
-            "price": 5,
-            "id": 3
-        }
-      ]
+       orders: []
      };
    }
   
@@ -120,7 +102,7 @@ class TakeOrder extends React.Component {
  
    render() {
      const { orders } = this.state;
-     const { menu } = this.state;
+     const menu = require('./dinnerMenu.json')
      return (
        <React.Fragment>
       <Row>
@@ -137,24 +119,14 @@ class TakeOrder extends React.Component {
 
          >
             <Row gutter={16}>
-            {menu.map((dish, index) => (
+            {menu.dinnerMenu.map((dish, index) => (
                 <Col span={8} style={{ marginBottom: 16 }}>
-                <Card key={dish.id} className="card-shadow center-col" title={dish.dish} bordered={false}>
-                   <img key={index} className="menu-img" src={require(`./img/${dish.img}.jpg`)} alt="" />
-                   <span key={index}>{dish.description}</span>
+                <Card key={index} className="card-shadow center-col" title={dish.dish} bordered={false}>
+                   <img className="menu-img" src={require(`${dish.img}`)} alt="" />
+                   <span>{dish.description}</span>
                    <Counter/>
                    <br/>
-                   <strong><span key={index} style={{ fontSize: 20 }}>{dish.price}</span></strong>
-                   {/* <button
-                       onClick={() => this.removeData(order)}
-                     >
-                       Delete
-                     </button>
-                     <button
-                       onClick={() => this.updateData(order)}
-                     >
-                       Edit
-                     </button> */}
+                   <strong><span style={{ fontSize: 20 }}>{`$${dish.price}.00`}</span></strong>
                 </Card>
              </Col>
                ))}

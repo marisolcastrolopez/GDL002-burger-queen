@@ -1,0 +1,25 @@
+{
+    "dinnerMenu": [
+        {
+           "dish": "Hamburger",
+           "img": "./img/img-bq-burger.jpg",
+           "description": "Grilled beef,topped with cheese and vegetables.",
+           "price": 10,
+           "id": 1
+       },
+       {
+           "dish": "Fries",
+           "img": "./img/img-bq-fries.jpg",
+           "description": "Classical french fries made at moment.",
+           "price": 5,
+           "id": 2
+       },
+       {
+           "dish": "Onion Rings",
+           "img": "./img/img-bq-onion.jpg",
+           "description": "Classic onion rings fried at moment.",
+           "price": 5,
+           "id": 3
+       }
+     ]
+}
