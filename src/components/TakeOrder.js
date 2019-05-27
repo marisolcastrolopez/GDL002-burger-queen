@@ -30,29 +30,7 @@ class TakeOrder extends React.Component {
     }
 
     this.state = {
-      orders: [[], [
-        {
-          "dish": "Hamburger",
-          "img": "./img/img-bq-burger.jpg",
-          "description": "Grilled beef,topped with cheese and vegetables.",
-          "price": 10,
-          "id": 1
-        },
-        {
-          "dish": "Fries",
-          "img": "./img/img-bq-fries.jpg",
-          "description": "Classical french fries made at moment.",
-          "price": 5,
-          "id": 2
-        },
-        {
-          "dish": "Onion Rings",
-          "img": "./img/img-bq-onion.jpg",
-          "description": "Classic onion rings fried at moment.",
-          "price": 5,
-          "id": 3
-        }
-      ]]
+      orders: []
     };
   }
 
@@ -143,8 +121,8 @@ class TakeOrder extends React.Component {
               >
                 <Row gutter={16}>
                   {menu.dinnerMenu.map((dish, index) => (
-                    
                       <Col span={8} style={{ marginBottom: 16 }}>
+                        
                         <Card key={index} className="card-shadow center-col" title={dish.dish} bordered={false}>
                           <img className="menu-img" src={require(`${dish.img}`)} alt="" />
                           <span>{dish.description}</span>
@@ -153,19 +131,11 @@ class TakeOrder extends React.Component {
                           <strong><span style={{ fontSize: 20 }}>{`$${dish.price}.00`}</span></strong>
                           <br />
                           <button type="submit">Add</button>
-                         
-
                         </Card>
-                        
-                      </Col>
-                    
-                    
-                  ))}
-                 <form onSubmit={this.handleSubmit}>
+                      <form onSubmit={this.handleSubmit}>
                       <h1>Add new team member here</h1>
-                        <div className="form-row">
                           <input type="hidden" ref="uid" />
-                          <div className="form-group col-md-6">
+                          <div>
                             <label>Name</label>
                             <input
                               type="text"
@@ -182,12 +152,14 @@ class TakeOrder extends React.Component {
                               className="form-control"
                               placeholder="Quantity"
                             />
-                          </div>
                         </div>
                         <button type="submit" className="btn btn-primary">
                           Save
-                      </button>
+                        </button>
                       </form>
+                      </Col>  
+                  ))}
+                 
                 </Row>
               </TabPane>
             </Tabs>
