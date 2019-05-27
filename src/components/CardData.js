@@ -82,7 +82,7 @@ class Test extends React.Component {
     render() {
       const { orders } = this.state;
       return (
-        <React.Fragment>
+
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
@@ -149,7 +149,7 @@ class Test extends React.Component {
               </div>
             </div>
           </div>
-        </React.Fragment>
+
       );
     }
   }
