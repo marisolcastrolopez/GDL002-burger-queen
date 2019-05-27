@@ -6,25 +6,26 @@ class Counter extends Component {
         super(props);
         this.state = {
             count: 0,
-            size: 'large'
+            size: 'large',
         };
     };
 
     handleDecrement = () => {
         this.setState({
-            count: this.state.count - 1
+            count: this.state.count - 1,
         });
     };
 
     handleIncrement = () => {
         this.setState({
-            count: this.state.count + 1
+            count: this.state.count + 1,
         });
     };
 
     handleSizeChange = e => {
         this.setState({ size: e.target.value });
       };
+
 
     render() {
         const size = this.state.size;

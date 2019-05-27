@@ -42,26 +42,26 @@ class Test extends React.Component {
     handleSubmit = event => {
       event.preventDefault();
       let title = this.refs.title.value;
-      let role = this.refs.role.value;
+      let qty = this.refs.qty.value;
       let uid = this.refs.uid.value;
   
-      if (uid && title && role) {
+      if (uid && title && qty) {
         const { orders } = this.state;
         const devIndex = orders.findIndex(data => {
           return data.uid === uid;
         });
         orders[devIndex].title = title;
-        orders[devIndex].role = role;
+        orders[devIndex].qty = qty;
         this.setState({ orders });
-      } else if (title && role) {
+      } else if (title && qty) {
         const uid = new Date().getTime().toString();
         const { orders } = this.state;
-        orders.push({ uid, title, role });
+        orders.push({ uid, title, qty });
         this.setState({ orders });
       }
   
       this.refs.title.value = "";
-      this.refs.role.value = "";
+      this.refs.qty.value = "";
       this.refs.uid.value = "";
     };
   
@@ -76,7 +76,7 @@ class Test extends React.Component {
     updateData = order => {
       this.refs.uid.value = order.uid;
       this.refs.title.value = order.title;
-      this.refs.role.value = order.role;
+      this.refs.qty.value = order.qty;
     };
   
     render() {
@@ -99,7 +99,7 @@ class Test extends React.Component {
                   >
                     <div className="card-body">
                       <h5 className="card-title">{order.title}</h5>
-                      <p className="card-text">{order.role}</p>
+                      <p className="card-text">{order.qty}</p>
                       <button
                         onClick={() => this.removeData(order)}
                         className="btn btn-link"
@@ -133,12 +133,12 @@ class Test extends React.Component {
                       />
                     </div>
                     <div className="form-group col-md-6">
-                      <label>Role</label>
+                      <label>Quantity</label>
                       <input
                         type="text"
-                        ref="role"
+                        ref="qty"
                         className="form-control"
-                        placeholder="Role"
+                        placeholder="Quantity"
                       />
                     </div>
                   </div>
@@ -146,16 +146,6 @@ class Test extends React.Component {
                     Save
                   </button>
                 </form>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xl-12">
-                <h3>
-                  Tutorial{" "}
-                  <a href="https://sebhastian.com/react-firebase-real-time-database-guide">
-                    here
-                  </a>
-                </h3>
               </div>
             </div>
           </div>

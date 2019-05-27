@@ -32,22 +32,28 @@ const MenuContainer = () => {
                <Col span={8}>
                   <Card className="card-shadow center-col" title="Hamburger" bordered={false}>
                      <img className="menu-img" src={burgerImg} alt="burger-img" />
-                     Delicious burger delicious
+                     <span>Grilled beef, topped with cheese and vegetables.</span>
                      <Counter/>
                      <br/>
-                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
+                     <strong><span style={{ fontSize: 20 }}>$10.00</span></strong>
                   </Card>
                </Col>
                <Col span={8}>
-                  <Card className="card-shadow" title="Fries" bordered={false}>
+                  <Card className="card-shadow center-col" title="Fries" bordered={false}>
                      <img className="menu-img" src={friesImg} alt="fries-img" />
-                     Delicious burger delicious
+                     <span>Classical french fries made at moment.</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
                   </Card>
                </Col>
                <Col span={8}>
-                  <Card className="card-shadow" title="Onion Rings" bordered={false}>
+                  <Card className="card-shadow center-col" title="Onion Rings" bordered={false}>
                      <img className="menu-img" src={onionImg} alt="onion-img" />
-                     Delicious burger delicious
+                     <span>Classic onion rings fried at moment.</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
                   </Card>
                </Col>
             </Row>
@@ -63,9 +69,12 @@ const MenuContainer = () => {
          >
             <Row gutter={16}>
                <Col span={8}>
-                  <Card className="card-shadow" title="Ham&Cheese Sandwich" bordered={false}>
+                  <Card className="card-shadow center-col" title="Ham&Cheese Sandwich" bordered={false}>
                      <img className="menu-img" src={sandwichImg} alt="sandwich-img" />
-                     Delicious burger delicious
+                     <span>Delicious ham and cheese sandwich topped with vegetables.</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$10.00</span></strong>
                   </Card>
                </Col>
                <Col span={8}>
@@ -87,35 +96,50 @@ const MenuContainer = () => {
          >
             <Row gutter={16}>
                <Col span={8} style={{ marginBottom: 16 }}>
-                  <Card className="card-shadow" title="Black Coffee" bordered={false}>
+                  <Card className="card-shadow center-col" title="Black Coffee" bordered={false}>
                      <img className="menu-img" src={blackImg} alt="black-img" />
-                     Delicious burger delicious
+                     <span>American black coffee</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
                   </Card>
                </Col>
                <Col span={8}>
-                  <Card className="card-shadow" title="Latte" bordered={false}>
+                  <Card className="card-shadow center-col" title="Latte" bordered={false}>
                      <img className="menu-img" src={latteImg} alt="latte-img" />
-                     Delicious burger delicious
+                     <span>Latte coffee.</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
                   </Card>
                </Col>
                <Col span={8}>
-                  <Card className="card-shadow" title="Orange Juice" bordered={false}>
+                  <Card className="card-shadow center-col" title="Orange Juice" bordered={false}>
                      <img className="menu-img" src={orangeImg} alt="orange-img" />
-                     Delicious burger delicious
+                     <span>Orange juice made at moment</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
                   </Card>
                </Col>
             </Row>
             <Row gutter={16}>
                <Col span={8} style={{ marginBottom: 16 }}>
-                  <Card className="card-shadow" title="Water" bordered={false}>
+                  <Card className="card-shadow center-col" title="Water" bordered={false}>
                      <img className="menu-img" src={waterImg} alt="water-img" />
-                     Delicious burger delicious
+                     <span>Bottled water</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
                   </Card>
                </Col>
                <Col span={8}>
-                  <Card className="card-shadow" title="Soda" bordered={false}>
+                  <Card className="card-shadow center-col" title="Soda" bordered={false}>
                      <img className="menu-img" src={cokeImg} alt="coke-img" />
-                     Delicious burger delicious
+                     <span>Soda various flavors.</span>
+                     <Counter/>
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
                   </Card>
                </Col>
                <Col span={8}>
