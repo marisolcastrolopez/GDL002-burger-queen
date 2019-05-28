@@ -30,10 +30,14 @@ class TakeOrder extends React.Component {
     }
 
     this.state = {
-      orders: []
+      orders: [],
+      count: 0,
+      size: 'large',
+      countHamburger: 0,
+      countFries: 0,
+      countOnion: 0,
     };
   }
-
 
   componentDidMount() {
     this.getUserData();
@@ -100,120 +104,195 @@ class TakeOrder extends React.Component {
     this.refs.qty.value = order.qty;
   };
 
+
+  handleDecrementHamburger = () => {
+    this.setState({
+      countHamburger: this.state.countHamburger - 1,
+    });
+  };
+
+  handleIncrementHamburger = () => {
+    this.setState({
+      countHamburger: this.state.countHamburger + 1,
+    });
+  };
+
+  handleDecrementFries = () => {
+    this.setState({
+      countFries: this.state.countFries - 1,
+    });
+  };
+
+  handleIncrementFries = () => {
+    this.setState({
+      countFries: this.state.countFries + 1,
+    });
+  };
+
+  handleDecrementOnion = () => {
+    this.setState({
+      countOnion: this.state.countOnion - 1,
+    });
+  };
+
+  handleIncrementOnion = () => {
+    this.setState({
+      countOnion: this.state.countOnion + 1,
+    });
+  };
+
+  handleSizeChange = e => {
+    this.setState({ size: e.target.value });
+  };
+
+
   render() {
     const { orders } = this.state;
-    const { dinner } = this.state.orders;
-    const menu = require('./dinnerMenu.json')
+    // const { dinner } = this.state.dinner;
+    const { countHamburger } = this.state.countHamburger;
+    const dish = require('./dinnerMenu.json')
+    const size = this.state.size;
     return (
-      <React.Fragment>
-        <Row>
-          <Col md={16} lg={16} xl={16} className="menu-pad">
-            <Tabs className="show-shadow" defaultActiveKey="1">
-              <TabPane
-                tab={
-                  <span>
-                    <i className="far fa-moon fa-lg"></i>
-                    Dinner
+      <Row>
+        <Col md={16} lg={16} xl={16} className="menu-pad">
+          <Tabs className="show-shadow" defaultActiveKey="1">
+            <TabPane
+              tab={
+                <span>
+                  <i className="far fa-moon fa-lg"></i>
+                  Dinner
               </span>
-                }
-                key="1"
+              }
+              key="1"
 
-              >
-                <Row gutter={16}>
-                  {menu.dinnerMenu.map((dish, index) => (
-                      <Col span={8} style={{ marginBottom: 16 }}>
-                        
-                        <Card key={index} className="card-shadow center-col" title={dish.dish} bordered={false}>
-                          <img className="menu-img" src={require(`${dish.img}`)} alt="" />
-                          <span>{dish.description}</span>
-                          <Counter />
-                          <br />
-                          <strong><span style={{ fontSize: 20 }}>{`$${dish.price}.00`}</span></strong>
-                          <br />
-                          <button type="submit">Add</button>
-                        </Card>
+            >
+              <Row gutter={16}>
+                
+                  <Col span={8} style={{ marginBottom: 16 }}>
+                    <Card className="card-shadow center-col" title="Hamburger" bordered={false}>
+                    <img className="menu-img" src={burgerImg} alt="burger-img" />
+                     <span>Grilled beef, topped with cheese and vegetables.</span>
+                      <br/>
+                      <br/>
+                      <Button size={size} onClick={this.handleDecrementHamburger}><span>-</span></Button>
+                      <span className="lg-text-counter">      {this.state.countHamburger}      </span>
+                      <Button size={size} onClick={this.handleIncrementHamburger}><span>+</span></Button>
+                      <br />
+                      <br />
+                      <strong><span style={{ fontSize: 20 }}>$10.00</span></strong>
                       <form onSubmit={this.handleSubmit}>
-                      <h1>Add new team member here</h1>
-                          <input type="hidden" ref="uid" />
-                          <div>
-                            <label>Name</label>
-                            <input
-                              type="text"
-                              ref="title"
-                              className="form-control"
-                              placeholder="title"
-                            />
-                          </div>
-                          <div>
-                            <label>Quantity</label>
-                            <input
-                              type="text"
-                              ref="qty"
-                              className="form-control"
-                              placeholder="Quantity"
-                            />
-                        </div>
+                        <h1>Add new team member here</h1>
+                        <input type="hidden" ref="uid" />
+
+                        <label>Name</label>
+                        <input
+                          type="text"
+                          ref="title"
+                          className="form-control"
+                          placeholder="title"
+                        />
+
+                        <label>Quantity</label>
+                        <input
+                          type="text"
+                          ref="qty"
+                          className="form-control"
+                          placeholder="Quantity"
+                        />
+
                         <button type="submit" className="btn btn-primary">
                           Save
                         </button>
                       </form>
-                      </Col>  
-                  ))}
-                 
-                </Row>
-              </TabPane>
-            </Tabs>
-          </Col>
-          <Col className="boxShadows" md={8} lg={8} xl={8}>
-            <span>Order N°</span><span>10000</span>
-            <span>5/22/2019</span><span>    23:04</span>
-            <br />
-            <span>Waiter Name</span>
-            <br />
-            <br />
-            <InputGroup compact>
-              <Select defaultValue="table01">
-                <Option value="table01">Table 01</Option>
-                <Option value="table02">Table 02</Option>
-                <Option value="table03">Table 03</Option>
-                <Option value="table04">Table 04</Option>
-                <Option value="deliver"><strong>Deliver</strong></Option>
-              </Select>
-              <Input placeholder="Client's Name" style={{ width: '60%' }} />
-            </InputGroup>
-            <Row>
-              <Col md={24} lg={24} xl={24}><Button style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
-              <Col md={24} lg={24} xl={24}>
-                <div className="container">
-                  <h1>Firebase Development Team</h1>
-                  <div>
-                    {orders.map((order) => (
-                      <div className="card-body">
-                        <h5 className="card-title">{order.title}</h5>
-                        <p className="card-text">{order.qty}</p>
-                        <button
-                          onClick={() => this.removeData(order)}
-                          className="btn btn-link"
-                        >
-                          Delete
-                     </button>
-                        <button
-                          onClick={() => this.updateData(order)}
-                          className="btn btn-link"
-                        >
-                          Edit
-                     </button>
-                      </div>
-                    ))}
+                    </Card>
+                  </Col>
+                  <Col span={8} style={{ marginBottom: 16 }}>
+                  <Card className="card-shadow center-col" title="Fries" bordered={false}>
+                     <img className="menu-img" src={friesImg} alt="fries-img" />
+                     <span>Classical french fries made at moment.</span>
+                     <br/>
+                      <br/>
+                      <Button size={size} onClick={this.handleDecrementFries}><span>-</span></Button>
+                      <span className="lg-text-counter">      {this.state.countFries}      </span>
+                      <Button size={size} onClick={this.handleIncrementFries}><span>+</span></Button>
+                      <br />
+                      <br />
+                     <br/>
+                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
+                  </Card>
+               </Col>
+               <Col span={8} style={{ marginBottom: 16 }}>
+                  <Card className="card-shadow center-col" title="Onion Rings" bordered={false}>
+                     <img className="menu-img" src={onionImg} alt="onion-img" />
+                     <span>Classic onion rings fried at moment.</span>
+                     <br/>
+                      <br/>
+                      <Button size={size} onClick={this.handleDecrementOnion}><span>-</span></Button>
+                      <span className="lg-text-counter">      {this.state.countOnion}      </span>
+                      <Button size={size} onClick={this.handleIncrementOnion}><span>+</span></Button>
+                      <br />
+                      <br />
+                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
+                  </Card>
+               </Col>
+                
 
-                  </div>
-              
+              </Row>
+            </TabPane>
+          </Tabs>
+        </Col>
+        <Col className="boxShadows" md={8} lg={8} xl={8}>
+          <span>Order N°</span><span>10000</span>
+          <span>5/22/2019</span><span>    23:04</span>
+          <br />
+          <span>Waiter Name</span>
+          <br />
+          <br />
+          <InputGroup compact>
+            <Select defaultValue="table01">
+              <Option value="table01">Table 01</Option>
+              <Option value="table02">Table 02</Option>
+              <Option value="table03">Table 03</Option>
+              <Option value="table04">Table 04</Option>
+              <Option value="deliver"><strong>Deliver</strong></Option>
+            </Select>
+            <Input placeholder="Client's Name" style={{ width: '60%' }} />
+          </InputGroup>
+          <Row>
+            <Col md={24} lg={24} xl={24}><Button style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
+            <Col md={24} lg={24} xl={24}>
+              <span className="lg-text-counter">      {this.state.countHamburger}      </span>
+              <span className="lg-text-counter">      {this.state.countFries}      </span>
+              <span className="lg-text-counter">      {this.state.countOnion}      </span>
+              <div className="container">
+                <h1>Firebase Development Team</h1>
+                <div>
+                  {orders.map((order) => (
+                    <div className="card-body">
+                      <h5 className="card-title">{order.title}</h5>
+                      <p className="card-text">{order.qty}</p>
+                      <button
+                        onClick={() => this.removeData(order)}
+                        className="btn btn-link"
+                      >
+                        Delete
+                     </button>
+                      <button
+                        onClick={() => this.updateData(order)}
+                        className="btn btn-link"
+                      >
+                        Edit
+                     </button>
+                    </div>
+                  ))}
+
                 </div>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </React.Fragment>
+
+              </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     );
   }
 }
