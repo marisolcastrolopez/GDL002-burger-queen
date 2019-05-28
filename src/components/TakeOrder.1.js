@@ -266,97 +266,7 @@ class TakeOrder extends React.Component {
                   </div>
                 </div> */}
               </Row>
-              
             </TabPane>
-            <TabPane
-            tab={
-               <span>
-                  <i className="far fa-sun fa-lg"></i>
-                  Breakfast
-              </span>
-            }
-            key="2"
-         >
-            <Row gutter={16}>
-               <Col span={8}>
-                  <Card className="card-shadow center-col" title="Ham&Cheese Sandwich" bordered={false}>
-                     <img className="menu-img" src={sandwichImg} alt="sandwich-img" />
-                     <span>Delicious ham and cheese sandwich topped with vegetables.</span>
-                     <Counter/>
-                     <br/>
-                     <strong><span style={{ fontSize: 20 }}>$10.00</span></strong>
-                  </Card>
-               </Col>
-               <Col span={8}>
-
-               </Col>
-               <Col span={8}>
-
-               </Col>
-            </Row>
-         </TabPane>
-         <TabPane
-            tab={
-               <span>
-                  <i className="fas fa-cocktail fa-lg"></i>
-                  Beverages
-              </span>
-            }
-            key="3"
-         >
-            <Row gutter={16}>
-               <Col span={8} style={{ marginBottom: 16 }}>
-                  <Card className="card-shadow center-col" title="Black Coffee" bordered={false}>
-                     <img className="menu-img" src={blackImg} alt="black-img" />
-                     <span>American black coffee</span>
-                     <Counter/>
-                     <br/>
-                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
-                  </Card>
-               </Col>
-               <Col span={8}>
-                  <Card className="card-shadow center-col" title="Latte" bordered={false}>
-                     <img className="menu-img" src={latteImg} alt="latte-img" />
-                     <span>Latte coffee.</span>
-                     <Counter/>
-                     <br/>
-                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
-                  </Card>
-               </Col>
-               <Col span={8}>
-                  <Card className="card-shadow center-col" title="Orange Juice" bordered={false}>
-                     <img className="menu-img" src={orangeImg} alt="orange-img" />
-                     <span>Orange juice made at moment</span>
-                     <Counter/>
-                     <br/>
-                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
-                  </Card>
-               </Col>
-            </Row>
-            <Row gutter={16}>
-               <Col span={8} style={{ marginBottom: 16 }}>
-                  <Card className="card-shadow center-col" title="Water" bordered={false}>
-                     <img className="menu-img" src={waterImg} alt="water-img" />
-                     <span>Bottled water</span>
-                     <Counter/>
-                     <br/>
-                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
-                  </Card>
-               </Col>
-               <Col span={8}>
-                  <Card className="card-shadow center-col" title="Soda" bordered={false}>
-                     <img className="menu-img" src={cokeImg} alt="coke-img" />
-                     <span>Soda various flavors.</span>
-                     <Counter/>
-                     <br/>
-                     <strong><span style={{ fontSize: 20 }}>$7.00</span></strong>
-                  </Card>
-               </Col>
-               <Col span={8}>
-               </Col>
-               
-            </Row>
-         </TabPane>
           </Tabs>
         </Col>
         <Col className="boxShadows" md={8} lg={8} xl={8}>
@@ -365,7 +275,7 @@ class TakeOrder extends React.Component {
             <Col md={24} lg={24} xl={24}>
               <h1><span>Order N°</span><span>10000</span></h1>
               <span>5/22/2019</span><span>    23:04</span>
-              <span>  <strong>Waiter:</strong> Robert E. Gordon</span>
+              <span>  Waiter Name</span>
               <br />
               <br />
               <InputGroup compact>
@@ -383,7 +293,7 @@ class TakeOrder extends React.Component {
           </Row>
           <Row className="HamburgerRow">
             <Col md={10} lg={10} xl={10}>
-              <span className="lg-text-counter step">{this.state.countHamburger}</span><span>    Hamburger</span>
+              <span className="lg-text-counter">{this.state.countHamburger}</span><span>    Hamburger</span>
             </Col>
             <Col md={8} lg={8} xl={8}>
               <Button onClick={this.handleDecrementHamburger}><span>-</span></Button>
@@ -391,13 +301,13 @@ class TakeOrder extends React.Component {
               <Button onClick={this.handleIncrementHamburger}><span>+</span></Button>
             </Col>
             <Col md={6} lg={6} xl={6}>
-              <Icon className="delete-icon" style={{ fontSize: 20 }} type="delete" />
+              <Icon style={{ fontSize: 20 }} type="delete" />
               <span className="md-text-counter">      ${priceHamburger}.00      </span>
             </Col>
           </Row>
           <Row className="FriesRow">
             <Col md={10} lg={10} xl={10}>
-              <span className="lg-text-counter  step">{this.state.countFries}</span><span>    Fries</span>
+              <span className="lg-text-counter">{this.state.countFries}</span><span>    Fries</span>
             </Col>
             <Col md={8} lg={8} xl={8}>
               <Button onClick={this.handleDecrementFries}><span>-</span></Button>
@@ -405,13 +315,13 @@ class TakeOrder extends React.Component {
               <Button onClick={this.handleIncrementFries}><span>+</span></Button>
             </Col>
             <Col md={6} lg={6} xl={6}>
-              <Icon className="delete-icon" style={{ fontSize: 20 }} type="delete" />
+              <Icon style={{ fontSize: 20 }} type="delete" />
               <span className="md-text-counter">      ${priceFries}.00      </span>
             </Col>
           </Row>
           <Row className="OnionRow">
             <Col md={10} lg={10} xl={10}>
-              <span className="lg-text-counter step">{this.state.countOnion}</span><span>    Onion Rings</span>
+              <span className="lg-text-counter">{this.state.countOnion}</span><span>    Onion Rings</span>
             </Col>
             <Col md={8} lg={8} xl={8}>
               <Button onClick={this.handleDecrementOnion}><span>-</span></Button>
@@ -419,21 +329,17 @@ class TakeOrder extends React.Component {
               <Button onClick={this.handleIncrementOnion}><span>+</span></Button>
             </Col>
             <Col md={6} lg={6} xl={6}>
-              <Icon className="delete-icon" style={{ fontSize: 20 }} type="delete" />
+              <Icon style={{ fontSize: 20 }} type="delete" />
               <span className="md-text-counter">      ${priceOnion}.00      </span>
             </Col>
-          </Row>
-          <Row className="order-pad-height">
-
           </Row>
           <Row>
             <Col md={24} lg={24} xl={24}><strong><p className="xl-text-counter">Total ${priceTotal}.00  </p></strong></Col>
             <br />
             <br />
-            <Col md={24} lg={24} xl={24}><Button type="danger" onClick={this.cancelOrder} style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
+            <Col md={24} lg={24} xl={24}><Button onClick={this.cancelOrder} style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
 
           </Row>
-          <br />
 
         </Col>
       </Row>

@@ -25,12 +25,12 @@ const Role = () => {
             <Col md={4} lg={4} xl={5}>
             </Col>
             <Col className="center-col" md={8} lg={8} xl={7}>
-               <button className="btn-bg btn-text spacer" >
+               <button className="btn-bg btn-text spacer whitelink" >
                   <Link className="btn-text" to="/waiterlist">Waiter</Link>
                </button>
             </Col>
             <Col className="center-col" md={8} lg={8} xl={7}>
-               <button className="btn-bg btn-text spacer" >
+               <button className="btn-bg btn-text spacer whitelink" >
                   <Link className="btn-text" to="/waiterlist">Chef</Link>
                </button>
             </Col>

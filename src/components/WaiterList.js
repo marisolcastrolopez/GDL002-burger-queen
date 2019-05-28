@@ -8,8 +8,7 @@ const menu = () => {
     return (
         <Menu>
             <Menu.Item key="0">
-                Robert E. Gordon
-                <Link className="btn-text" to="/waiter-home">Link</Link>
+                <Link to="/waiter-home">Robert E. Gordon</Link>
             </Menu.Item>
             <Menu.Item key="1">
                 Michelle L. Arredondo
@@ -45,10 +44,18 @@ const RenderMenu = () => {
 
 const WaiterList = () => {
     return (
+        <section>
         <section className="center-col pad-role">
             <span className="titles">Select your name</span>
             <br />
             <RenderMenu />
+            <br/>
+        </section>
+        <section className="center-col pad-role">
+             <button className="btn-bg btn-text" >
+                <Link className="md-text-counter whitelink" to="/">Go Back</Link>
+            </button>
+        </section>
         </section>
 
     )

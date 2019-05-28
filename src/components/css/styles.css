@@ -58,6 +58,23 @@ code {
   font-size: 1em;
 }
 
+a.whitelink {
+  color: #ffffff;
+}
+
+span.step {
+  background: #394c69;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  /* font-weight: bold; */
+  line-height: 1.3em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.2em; 
+}
 
 /* Buttons */
 .btn-bg {
@@ -77,6 +94,10 @@ code {
 
 .ant-btn-lg {
   font-size: 1.5em;
+}
+
+.delete-icon {
+  color: #b81919;
 }
 
 
@@ -116,6 +137,19 @@ code {
   padding-right: 0.8em;
 }
 
+.order-pad-height {
+  height: 25vh;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+  position: static;
+}
+
 /* Shadows */
 .boxShadows {
   padding: 10px 10px 10px 10px;
@@ -128,7 +162,7 @@ code {
   height: stretch; */
   display: block;
 overflow: auto;
-min-height: 100vh !important;
+min-height: 65vh !important;
 }
 
 .header-shadow{

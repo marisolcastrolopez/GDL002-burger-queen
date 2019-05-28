@@ -10,13 +10,13 @@ const menu = () => {
    return (
       <Menu>
          <Menu.Item key="0">
-            <Link to="/waiterlist">Change to Chef View</Link>
+            <Link to="/">Change to Chef View</Link>
          </Menu.Item>
          <Menu.Item key="1">
             <Link to="/waiterlist">Change User</Link>
          </Menu.Item>
          <Menu.Item key="3">
-            <Link to="/waiterlist">Log out</Link>
+            <Link to="/">Log out</Link>
          </Menu.Item>
       </Menu>
    )
@@ -26,7 +26,7 @@ const RenderMenu = () => {
    return (
       <Dropdown overlay={menu} trigger={['click']}>
          <a className="ant-dropdown-link" href="#">
-            <Avatar size="large" icon="user" />   Waiter Name <Icon type="down" />
+            <Avatar size="large" icon="user" />   Robert E. Gordon <Icon type="down" />
          </a>
       </Dropdown>
    )
@@ -42,7 +42,7 @@ const HeaderWaiter = () => {
             <Col className="center-col" xs={0} md={14} lg={14} xl={14}>
             </Col>
             <Col className="center-col" xs={0} md={2} lg={2} xl={2}>
-               <Button type="primary">New Order</Button>
+               <Button type="primary"><Link to="/waiter-home">New Order</Link></Button>
             </Col>
             <Col className="center-col" xs={0} md={5} lg={5} xl={5}>
                <RenderMenu />
