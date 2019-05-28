@@ -171,17 +171,8 @@ class TakeOrder extends React.Component {
         <Col md={16} lg={16} xl={16} className="menu-pad">
           <Tabs className="show-shadow" defaultActiveKey="1">
             <TabPane
-              tab={
-                <span>
-                  <i className="far fa-moon fa-lg"></i>
-                  Dinner
-              </span>
-              }
-              key="1"
-
-            >
+              tab={<span><i className="far fa-moon fa-lg"></i>Dinner</span>}key="1">
               <Row gutter={16}>
-
                 <Col span={8} style={{ marginBottom: 16 }}>
                   <Card className="card-shadow center-col" title="Hamburger" bordered={false}>
                     <img className="menu-img" src={burgerImg} alt="burger-img" />
@@ -225,103 +216,130 @@ class TakeOrder extends React.Component {
                   </Card>
                 </Col>
 
-                <form onSubmit={this.handleSubmit}>
-                      <h1>Add new team member here</h1>
-                      <input type="hidden" ref="uid" />
+                {/* <form onSubmit={this.handleSubmit}>
+                  <h1>Add new team member here</h1>
+                  <input type="hidden" ref="uid" />
 
-                      <label>Name</label>
-                      <input
-                        type="text"
-                        ref="title"
-                        className="form-control"
-                        placeholder="title"
-                      />
+                  <label>Name</label>
+                  <input
+                    type="text"
+                    ref="title"
+                    className="form-control"
+                    placeholder="title"
+                  />
 
-                      <label>Quantity</label>
-                      <input
-                        type="text"
-                        ref="qty"
-                        className="form-control"
-                        placeholder="Quantity"
-                      />
+                  <label>Quantity</label>
+                  <input
+                    type="text"
+                    ref="qty"
+                    className="form-control"
+                    placeholder="Quantity"
+                  />
 
-                      <button type="submit" className="btn btn-primary">
-                        Save
+                  <button type="submit" className="btn btn-primary">
+                    Save
                         </button>
-                    </form>
+                </form>
+                <div className="container">
+                  <h1>Firebase Development Team</h1>
+                  <div>
+                    {orders.map((order) => (
+                      <div className="card-body">
+                        <h5 className="card-title">{order.title}</h5>
+                        <p className="card-text">{order.qty}</p>
+                        <button
+                          onClick={() => this.removeData(order)}
+                          className="btn btn-link"
+                        >
+                          Delete
+                     </button>
+                        <button
+                          onClick={() => this.updateData(order)}
+                          className="btn btn-link"
+                        >
+                          Edit
+                     </button>
+                      </div>
+                    ))}
+
+                  </div>
+                </div> */}
               </Row>
             </TabPane>
           </Tabs>
         </Col>
         <Col className="boxShadows" md={8} lg={8} xl={8}>
-          <h1><span>Order N°</span><span>10000</span></h1>
-          <span>5/22/2019</span><span>    23:04</span>
-          <span>  Waiter Name</span>
-          <br />
-          <br />
-          <InputGroup compact>
-            <Select defaultValue="table01">
-              <Option value="table01">Table 01</Option>
-              <Option value="table02">Table 02</Option>
-              <Option value="table03">Table 03</Option>
-              <Option value="table04">Table 04</Option>
-              <Option value="deliver"><strong>Deliver</strong></Option>
-            </Select>
-            <Input placeholder="Client's Name" style={{ width: '60%' }} />
-          </InputGroup>
-          <Row>
-            <br/>
+          <Row className="defaultInfo">
+            <br />
             <Col md={24} lg={24} xl={24}>
-              <span className="lg-text-counter">      {this.state.countHamburger}      </span><span>Hamburger            </span>
-              <Button onClick={this.handleDecrementHamburger}><span>-</span></Button>
-              <span>      {this.state.countHamburger}      </span>
-              <Button onClick={this.handleIncrementHamburger}><span>+</span></Button><Icon style={{ fontSize: 20 }} type="delete" />
-              <span className="lg-text-counter">      ${priceHamburger}.00      </span>
-              <br />
-              <span className="lg-text-counter">      {this.state.countFries}      </span><span>French Fries          </span>
-              <Button onClick={this.handleDecrementFries}><span>-</span></Button>
-              <span>      {this.state.countFries}      </span>
-              <Button onClick={this.handleIncrementFries}><span>+</span></Button><Icon style={{ fontSize: 20 }} type="delete" />
-              <span className="lg-text-counter">      ${priceFries}.00      </span>
-              <br />
-              <span className="lg-text-counter">      {this.state.countOnion}     </span><span>Onion Rings             </span>
-              <Button onClick={this.handleDecrementOnion}><span>-</span></Button>
-              <span>      {this.state.countOnion}      </span>
-              <Button onClick={this.handleIncrementOnion}><span>+</span></Button><Icon style={{ fontSize: 20 }} type="delete" />
-              <span className="lg-text-counter">      ${priceOnion}.00      </span>
-              <br/>
-              <h1>Total ${priceTotal}.00  </h1>
+              <h1><span>Order N°</span><span>10000</span></h1>
+              <span>5/22/2019</span><span>    23:04</span>
+              <span>  Waiter Name</span>
               <br />
               <br />
+              <InputGroup compact>
+                <Select defaultValue="table01">
+                  <Option value="table01">Table 01</Option>
+                  <Option value="table02">Table 02</Option>
+                  <Option value="table03">Table 03</Option>
+                  <Option value="table04">Table 04</Option>
+                  <Option value="deliver"><strong>Deliver</strong></Option>
+                </Select>
+                <Input placeholder="Client's Name" style={{ width: '60%' }} />
+              </InputGroup>
               <br />
-              <Col md={24} lg={24} xl={24}><Button onClick={this.cancelOrder} style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
-              <div className="container">
-                <h1>Firebase Development Team</h1>
-                <div>
-                  {orders.map((order) => (
-                    <div className="card-body">
-                      <h5 className="card-title">{order.title}</h5>
-                      <p className="card-text">{order.qty}</p>
-                      <button
-                        onClick={() => this.removeData(order)}
-                        className="btn btn-link"
-                      >
-                        Delete
-                     </button>
-                      <button
-                        onClick={() => this.updateData(order)}
-                        className="btn btn-link"
-                      >
-                        Edit
-                     </button>
-                    </div>
-                  ))}
-
-                </div>
-
-              </div>
             </Col>
           </Row>
+          <Row className="HamburgerRow">
+            <Col md={10} lg={10} xl={10}>
+              <span className="lg-text-counter">{this.state.countHamburger}</span><span>    Hamburger</span>
+            </Col>
+            <Col md={8} lg={8} xl={8}>
+              <Button onClick={this.handleDecrementHamburger}><span>-</span></Button>
+              <span>      {this.state.countHamburger}      </span>
+              <Button onClick={this.handleIncrementHamburger}><span>+</span></Button>
+            </Col>
+            <Col md={6} lg={6} xl={6}>
+              <Icon style={{ fontSize: 20 }} type="delete" />
+              <span className="md-text-counter">      ${priceHamburger}.00      </span>
+            </Col>
+          </Row>
+          <Row className="FriesRow">
+            <Col md={10} lg={10} xl={10}>
+              <span className="lg-text-counter">{this.state.countFries}</span><span>    Fries</span>
+            </Col>
+            <Col md={8} lg={8} xl={8}>
+              <Button onClick={this.handleDecrementFries}><span>-</span></Button>
+              <span>      {this.state.countFries}      </span>
+              <Button onClick={this.handleIncrementFries}><span>+</span></Button>
+            </Col>
+            <Col md={6} lg={6} xl={6}>
+              <Icon style={{ fontSize: 20 }} type="delete" />
+              <span className="md-text-counter">      ${priceFries}.00      </span>
+            </Col>
+          </Row>
+          <Row className="OnionRow">
+            <Col md={10} lg={10} xl={10}>
+              <span className="lg-text-counter">{this.state.countOnion}</span><span>    Onion Rings</span>
+            </Col>
+            <Col md={8} lg={8} xl={8}>
+              <Button onClick={this.handleDecrementOnion}><span>-</span></Button>
+              <span>      {this.state.countOnion}      </span>
+              <Button onClick={this.handleIncrementOnion}><span>+</span></Button>
+            </Col>
+            <Col md={6} lg={6} xl={6}>
+              <Icon style={{ fontSize: 20 }} type="delete" />
+              <span className="md-text-counter">      ${priceOnion}.00      </span>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={24} lg={24} xl={24}><strong><p className="xl-text-counter">Total ${priceTotal}.00  </p></strong></Col>
+            <br />
+            <br />
+            <Col md={24} lg={24} xl={24}><Button onClick={this.cancelOrder} style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
+
+          </Row>
+
         </Col>
       </Row>
     );
