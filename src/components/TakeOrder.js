@@ -141,9 +141,19 @@ class TakeOrder extends React.Component {
     });
   };
 
+  cancelOrder = () => {
+    this.setState({
+      count: 0,
+      countHamburger: 0,
+      countFries: 0,
+      countOnion: 0,
+    });
+  }
+
   handleSizeChange = e => {
     this.setState({ size: e.target.value });
   };
+
 
 
   render() {
@@ -152,6 +162,10 @@ class TakeOrder extends React.Component {
     const { countHamburger } = this.state.countHamburger;
     const dish = require('./dinnerMenu.json')
     const size = this.state.size;
+    const priceHamburger = this.state.countHamburger * 10
+    const priceFries = this.state.countFries * 5
+    const priceOnion = this.state.countOnion * 5
+    const priceTotal = priceHamburger + priceFries + priceOnion
     return (
       <Row>
         <Col md={16} lg={16} xl={16} className="menu-pad">
@@ -167,85 +181,82 @@ class TakeOrder extends React.Component {
 
             >
               <Row gutter={16}>
-                
-                  <Col span={8} style={{ marginBottom: 16 }}>
-                    <Card className="card-shadow center-col" title="Hamburger" bordered={false}>
+
+                <Col span={8} style={{ marginBottom: 16 }}>
+                  <Card className="card-shadow center-col" title="Hamburger" bordered={false}>
                     <img className="menu-img" src={burgerImg} alt="burger-img" />
-                     <span>Grilled beef, topped with cheese and vegetables.</span>
-                      <br/>
-                      <br/>
-                      <Button size={size} onClick={this.handleDecrementHamburger}><span>-</span></Button>
-                      <span className="lg-text-counter">      {this.state.countHamburger}      </span>
-                      <Button size={size} onClick={this.handleIncrementHamburger}><span>+</span></Button>
-                      <br />
-                      <br />
-                      <strong><span style={{ fontSize: 20 }}>$10.00</span></strong>
-                      <form onSubmit={this.handleSubmit}>
-                        <h1>Add new team member here</h1>
-                        <input type="hidden" ref="uid" />
-
-                        <label>Name</label>
-                        <input
-                          type="text"
-                          ref="title"
-                          className="form-control"
-                          placeholder="title"
-                        />
-
-                        <label>Quantity</label>
-                        <input
-                          type="text"
-                          ref="qty"
-                          className="form-control"
-                          placeholder="Quantity"
-                        />
-
-                        <button type="submit" className="btn btn-primary">
-                          Save
-                        </button>
-                      </form>
-                    </Card>
-                  </Col>
-                  <Col span={8} style={{ marginBottom: 16 }}>
+                    <span>Grilled beef, topped with cheese and vegetables.</span>
+                    <br />
+                    <br />
+                    <Button size={size} onClick={this.handleDecrementHamburger}><span>-</span></Button>
+                    <span className="lg-text-counter">      {this.state.countHamburger}      </span>
+                    <Button size={size} onClick={this.handleIncrementHamburger}><span>+</span></Button>
+                    <br />
+                    <br />
+                    <strong><span style={{ fontSize: 20 }}>$10.00</span></strong>
+                  </Card>
+                </Col>
+                <Col span={8} style={{ marginBottom: 16 }}>
                   <Card className="card-shadow center-col" title="Fries" bordered={false}>
-                     <img className="menu-img" src={friesImg} alt="fries-img" />
-                     <span>Classical french fries made at moment.</span>
-                     <br/>
-                      <br/>
-                      <Button size={size} onClick={this.handleDecrementFries}><span>-</span></Button>
-                      <span className="lg-text-counter">      {this.state.countFries}      </span>
-                      <Button size={size} onClick={this.handleIncrementFries}><span>+</span></Button>
-                      <br />
-                      <br />
-                     <br/>
-                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
+                    <img className="menu-img" src={friesImg} alt="fries-img" />
+                    <span>Classical french fries made at moment.</span>
+                    <br />
+                    <br />
+                    <Button size={size} onClick={this.handleDecrementFries}><span>-</span></Button>
+                    <span className="lg-text-counter">      {this.state.countFries}      </span>
+                    <Button size={size} onClick={this.handleIncrementFries}><span>+</span></Button>
+                    <br />
+                    <br />
+                    <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
                   </Card>
-               </Col>
-               <Col span={8} style={{ marginBottom: 16 }}>
+                </Col>
+                <Col span={8} style={{ marginBottom: 16 }}>
                   <Card className="card-shadow center-col" title="Onion Rings" bordered={false}>
-                     <img className="menu-img" src={onionImg} alt="onion-img" />
-                     <span>Classic onion rings fried at moment.</span>
-                     <br/>
-                      <br/>
-                      <Button size={size} onClick={this.handleDecrementOnion}><span>-</span></Button>
-                      <span className="lg-text-counter">      {this.state.countOnion}      </span>
-                      <Button size={size} onClick={this.handleIncrementOnion}><span>+</span></Button>
-                      <br />
-                      <br />
-                     <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
+                    <img className="menu-img" src={onionImg} alt="onion-img" />
+                    <span>Classic onion rings fried at moment.</span>
+                    <br />
+                    <br />
+                    <Button size={size} onClick={this.handleDecrementOnion}><span>-</span></Button>
+                    <span className="lg-text-counter">      {this.state.countOnion}      </span>
+                    <Button size={size} onClick={this.handleIncrementOnion}><span>+</span></Button>
+                    <br />
+                    <br />
+                    <strong><span style={{ fontSize: 20 }}>$5.00</span></strong>
                   </Card>
-               </Col>
-                
+                </Col>
 
+                <form onSubmit={this.handleSubmit}>
+                      <h1>Add new team member here</h1>
+                      <input type="hidden" ref="uid" />
+
+                      <label>Name</label>
+                      <input
+                        type="text"
+                        ref="title"
+                        className="form-control"
+                        placeholder="title"
+                      />
+
+                      <label>Quantity</label>
+                      <input
+                        type="text"
+                        ref="qty"
+                        className="form-control"
+                        placeholder="Quantity"
+                      />
+
+                      <button type="submit" className="btn btn-primary">
+                        Save
+                        </button>
+                    </form>
               </Row>
             </TabPane>
           </Tabs>
         </Col>
         <Col className="boxShadows" md={8} lg={8} xl={8}>
-          <span>Order N°</span><span>10000</span>
+          <h1><span>Order N°</span><span>10000</span></h1>
           <span>5/22/2019</span><span>    23:04</span>
-          <br />
-          <span>Waiter Name</span>
+          <span>  Waiter Name</span>
           <br />
           <br />
           <InputGroup compact>
@@ -259,11 +270,31 @@ class TakeOrder extends React.Component {
             <Input placeholder="Client's Name" style={{ width: '60%' }} />
           </InputGroup>
           <Row>
-            <Col md={24} lg={24} xl={24}><Button style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
+            <br/>
             <Col md={24} lg={24} xl={24}>
-              <span className="lg-text-counter">      {this.state.countHamburger}      </span>
-              <span className="lg-text-counter">      {this.state.countFries}      </span>
-              <span className="lg-text-counter">      {this.state.countOnion}      </span>
+              <span className="lg-text-counter">      {this.state.countHamburger}      </span><span>Hamburger            </span>
+              <Button onClick={this.handleDecrementHamburger}><span>-</span></Button>
+              <span>      {this.state.countHamburger}      </span>
+              <Button onClick={this.handleIncrementHamburger}><span>+</span></Button><Icon style={{ fontSize: 20 }} type="delete" />
+              <span className="lg-text-counter">      ${priceHamburger}.00      </span>
+              <br />
+              <span className="lg-text-counter">      {this.state.countFries}      </span><span>French Fries          </span>
+              <Button onClick={this.handleDecrementFries}><span>-</span></Button>
+              <span>      {this.state.countFries}      </span>
+              <Button onClick={this.handleIncrementFries}><span>+</span></Button><Icon style={{ fontSize: 20 }} type="delete" />
+              <span className="lg-text-counter">      ${priceFries}.00      </span>
+              <br />
+              <span className="lg-text-counter">      {this.state.countOnion}     </span><span>Onion Rings             </span>
+              <Button onClick={this.handleDecrementOnion}><span>-</span></Button>
+              <span>      {this.state.countOnion}      </span>
+              <Button onClick={this.handleIncrementOnion}><span>+</span></Button><Icon style={{ fontSize: 20 }} type="delete" />
+              <span className="lg-text-counter">      ${priceOnion}.00      </span>
+              <br/>
+              <h1>Total ${priceTotal}.00  </h1>
+              <br />
+              <br />
+              <br />
+              <Col md={24} lg={24} xl={24}><Button onClick={this.cancelOrder} style={{ marginRight: 30 }}>Cancel <Icon type="delete" /></Button><Button>Send Order<Icon type="arrow-right" /></Button></Col>
               <div className="container">
                 <h1>Firebase Development Team</h1>
                 <div>
