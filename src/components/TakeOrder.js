@@ -2,7 +2,7 @@ import React from 'react';
 import "antd/dist/antd.css";
 // import { Link } from "react-router-dom";
 import Counter from './Counter'
-import { Icon, Card, Tabs, Col, Row, Button, Input, Select, InputNumber, DatePicker, AutoComplete, Cascader, Divider } from 'antd';
+import { Icon, Card, Tabs, Col, Row, Button, Input, Select } from 'antd';
 import Firebase from 'firebase';
 import config from './config';
 import burgerImg from './img/img-bq-burger.jpg';
@@ -14,7 +14,7 @@ import latteImg from './img/img-bq-latte.jpg'
 import orangeImg from './img/img-bq-orange.jpg'
 import waterImg from './img/img-bq-water.jpg'
 import cokeImg from './img/img-bq-coke.jpg'
-import menu from './dinnerMenu.json'
+// import menu from './dinnerMenu.json'
 
 const TabPane = Tabs.TabPane;
 const InputGroup = Input.Group;
@@ -158,10 +158,10 @@ class TakeOrder extends React.Component {
 
 
   render() {
-    const { orders } = this.state;
+    // const { orders } = this.state;
     // const { dinner } = this.state.dinner;
-    const { countHamburger } = this.state.countHamburger;
-    const dish = require('./dinnerMenu.json')
+    // const { countHamburger } = this.state.countHamburger;
+    // const dish = require('./dinnerMenu.json')
     const size = this.state.size;
     const priceHamburger = this.state.countHamburger * 10
     const priceFries = this.state.countFries * 5
@@ -266,7 +266,7 @@ class TakeOrder extends React.Component {
                   </div>
                 </div> */}
               </Row>
-              
+
             </TabPane>
             <TabPane
             tab={
@@ -354,7 +354,7 @@ class TakeOrder extends React.Component {
                </Col>
                <Col span={8}>
                </Col>
-               
+
             </Row>
          </TabPane>
           </Tabs>

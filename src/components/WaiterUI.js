@@ -1,12 +1,12 @@
 import React from 'react';
 import "antd/dist/antd.css";
 // import { Link } from "react-router-dom";
-import { Layout, Button, Row, Col } from 'antd';
+import { Layout } from 'antd';
 import SiderWaiter from './SiderWaiter'
 import HeaderWaiter from './HeaderWaiter';
 import TakeOrder from './TakeOrder'
 // import OrderSection from './OrderSection'
-import Test from './CardData'
+// import Test from './CardData'
 
 const { Content } = Layout;
 
